@@ -1,36 +1,9 @@
-# This project is not maintained anymore
-Hey guys!  
-I'm really sorry, but I'm not going to support this add-on anymore.  
-<img src="https://cdn.frankerfacez.com/emoticon/213310/4" width="32">
-
 # About
 This solution is for blocking unwanted content on [twitch.tv](http://www.twitch.tv/), such as streams, games, videos etc. Currently, the following platforms are supported:
-- Extension for Google Chrome. Available on Chrome Web Store [here](https://chrome.google.com/webstore/detail/hide-unwanted-streams-on/kpgfplcjhleaadnmjmkjddcmekdhdiia).
-- Userscript, to be used with userscript managers such as [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/). Can be installed from [here](https://openuserjs.org/scripts/LinogeFly/Hide_unwanted_streams_on_Twitch).
+- Userscript, to be used with userscript managers such as [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en) or [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/). Can be installed from [here](https://github.com/r3t3ch/hide-unwanted-streams-on-twitch/raw/master/dist/userscript/husot.user.js).
 
 # How to use
 See [User Guide](https://github.com/LinogeFly/hide-unwanted-streams-on-twitch/tree/master/docs/user-guide.md) document.
-
-# How to build
-## Prerequisites
-Before you can build this solution, you must install and configure the following dependencies on your machine:
-- [Git](http://git-scm.com/)
-- [Node.js](http://nodejs.org/)
-- [Gulp](http://gulpjs.com/). Install gulp globally with:
-```
-npm install --global gulp
-```
-
-## Building
-In order to build the solution, you need to clone the source code repository first. After that install all necessary dependencies by running the following command in the solution's directory:
-```
-npm install
-```
-To build this solution, use:
-```
-gulp
-```
-For platform specific builds use `gulp build-chrome` and `gulp build-userscript` commands.
 
 # How to run tests
 Currently, tests are semi-automatic. To run tests open browser's console, select "Hide unwanted streams on Twitch" scope and run the following command:
@@ -72,3 +45,6 @@ Failing tests will throw errors into console.
 - 1.2.0 Added Google Chrome Extension platform.
 - 1.1.0 Added support for hiding videos in addition to live streams.
 - 1.0.0 First release. Only Userscript platform is supported.
+
+# Known issues
+- "infinite scroll" can be break, requiring a refresh
