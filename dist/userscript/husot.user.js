@@ -153,7 +153,7 @@ husot.htmlLayout = husot.htmlLayout || {};
 husot.htmlLayout.streamOverlay = '\
     <div class="husot-thumbOverlay">\
         <ul class="husot-thumbOverlay-menu">\
-            <li><a class="husot-blockStreamBtn" href="javascript:void(0);">Block</a></li>\
+            <li><a class="husot-blockStreamBtn" href="javascript:void(0);">Ban</a></li>\
             <li class="husot-thumbOverlay-menu-separator"> | </li>\
             <li><a class="husot-showSettingsBtn" href="javascript:void(0);">Settings</a></li>\
         </ul>\
@@ -634,7 +634,7 @@ husot.thumbs.StreamThumbsManager.prototype = Object.create(husot.thumbs.ThumbsMa
 husot.thumbs.StreamThumbsManager.prototype.constructor = husot.thumbs.StreamThumbsManager;
 
 husot.thumbs.StreamThumbsManager.prototype.getDomListnerThumbSelector = function () {
-    return '[data-a-target="live-channel-card-title-link"]';
+    return '[data-test-selector="preview-card-titles__primary-link"]';
 }
 
 husot.thumbs.StreamThumbsManager.prototype._getContainerJQuery = function () {
@@ -653,7 +653,7 @@ husot.thumbs.StreamThumbsManager.prototype._getGameName = function ($thumbContai
         throw Error(husot.exceptions.argumentNullOrEmpty('$thumbContainer'));
     }
 
-    var $game = $thumbContainer.find('[data-a-target="live-channel-card-game-link"]')
+    var $game = $thumbContainer.find('[href^="/directory/game/"]')
         .filter(function () {
             // Check that game thumbnail is hidden explicitly and not because an ancestor element is hidden
             return $(this).css('display') !== 'none';
@@ -663,7 +663,7 @@ husot.thumbs.StreamThumbsManager.prototype._getGameName = function ($thumbContai
         return '';
     }
 
-    return $game.attr('title').trim();
+    return $game.text();
 }
 
 husot.thumbs.StreamThumbsManager.prototype._getChannelName = function ($thumbContainer) {
@@ -675,13 +675,13 @@ husot.thumbs.StreamThumbsManager.prototype._getChannelName = function ($thumbCon
                 '^https?://([a-zA-Z]+\.)?twitch.tv/directory/all(/?|/.+)$'
             ],
             name: function () {
-                return $thumbContainer.find('[data-a-target="live-channel-card-title-link"]').attr('href').trimSlash();
+                return $thumbContainer.find('[data-test-selector="preview-card-titles__primary-link"]').attr('href').trimSlash();
             }
         },
         // Default (should be the last one)
         {
             name: function() {
-                return $thumbContainer.find('[data-a-target="live-channel-card-title-link"]').attr('href').trimSlash();
+                return $thumbContainer.find('[data-test-selector="preview-card-titles__primary-link"]').attr('href').trimSlash();
             }
         }
     ];
@@ -1126,7 +1126,7 @@ husot.thumbs.GameThumbsManager.prototype.showThumbs = function (name) {
     }
 
     var style = document.createElement('style');
-    style.textContent = '.husot-button{background:#6441a5;color:#fff;padding:0 10px;font-size:12px;text-align:center;cursor:pointer;height:30px;display:inline-block;line-height:30px}.husot-button:hover{color:#fff;background:#7550ba;text-decoration:none}.husot-modalOverlay{display:none;background:rgba(33,18,51,.9);position:fixed;z-index:10000;top:0;bottom:0;left:0;padding:20px 0;width:100%;overflow-x:hidden;overflow-y:auto}.husot-modalWindow{display:none;position:relative;opacity:1;margin:50px auto 0}.husot-settings{font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#32323e;width:360px;background:#FFF;padding:20px}.husot-settings-nav{list-style:none;padding:0;margin:0 0 5px;border-bottom:1px solid rgba(0,0,0,.2);overflow:auto}.husot-settings-nav-item{float:left;margin-right:20px}.husot-settings-nav-item-name{font-size:14px;line-height:24px;padding-bottom:7px;display:inline-block;cursor:pointer;text-decoration:none;color:#6441a5;border-bottom:1px solid transparent}.husot-settings-nav-item-name:hover{color:#19191f;border-bottom:1px solid rgba(0,0,0,.35);text-decoration:none}.husot-settings-nav-item-name-active,.husot-settings-nav-item-name-active:hover{color:#19191f;border-bottom:1px solid #19191f}.husot-settings-blockedList{list-style:none;padding:0;margin:0 0 5px;overflow-y:auto;min-height:240px;max-height:400px}.husot-settings-blockedList-item{margin:5px 0;clear:both;overflow:auto}.husot-settings-blockedList-item-name{font-size:14px;display:inline-block;width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;height:30px;float:left;line-height:30px;padding-right:80px}.husot-settings-blockedList-item-empty{text-align:center;font-size:16px;color:#bbb;font-style:italic;padding:20px 0}.husot-settings-blockedList-item-unblockBtn{float:right;max-width:80px;overflow:hidden;margin-left:-80px}.husot-settings-footer{text-align:center;width:100%;margin:0 0 5px;padding:20px 0 0;border-top:1px solid #dedede}.husot-settings-footer .husot-button{min-width:70px}.husot-thumbOverlay{display:none;position:absolute;top:auto!important;right:auto!important;bottom:5px!important;left:5px!important;color:#fff;background-color:#000;padding:0 5px;opacity:.75;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;line-height:22px;width:auto!important;min-height:auto!important}.husot-thumbOverlay a{color:#fff!important;text-decoration:none!important}.husot-thumbOverlay a:hover{color:#fff!important;text-decoration:underline!important}.husot-thumbOverlay-menu{list-style:none;padding:0;margin:0}.husot-thumbOverlay-menu li,.husot-thumbOverlay-menu-separator{display:inline}';
+    style.textContent = '.husot-button{background:#6441a5;color:#fff;padding:0 10px;font-size:12px;text-align:center;cursor:pointer;height:30px;display:inline-block;line-height:30px}.husot-button:hover{color:#fff;background:#7550ba;text-decoration:none}.husot-modalOverlay{display:none;background:rgba(33,18,51,.9);position:fixed;z-index:10000;top:0;bottom:0;left:0;padding:20px 0;width:100%;overflow-x:hidden;overflow-y:auto}.husot-modalWindow{display:none;position:relative;opacity:1;margin:50px auto 0}.husot-settings{font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#32323e;width:360px;background:#FFF;padding:20px}.husot-settings-nav{list-style:none;padding:0;margin:0 0 5px;border-bottom:1px solid rgba(0,0,0,.2);overflow:auto}.husot-settings-nav-item{float:left;margin-right:20px}.husot-settings-nav-item-name{font-size:14px;line-height:24px;padding-bottom:7px;display:inline-block;cursor:pointer;text-decoration:none;color:#6441a5;border-bottom:1px solid transparent}.husot-settings-nav-item-name:hover{color:#19191f;border-bottom:1px solid rgba(0,0,0,.35);text-decoration:none}.husot-settings-nav-item-name-active,.husot-settings-nav-item-name-active:hover{color:#19191f;border-bottom:1px solid #19191f}.husot-settings-blockedList{list-style:none;padding:0;margin:0 0 5px;overflow-y:auto;min-height:240px;max-height:400px}.husot-settings-blockedList-item{margin:5px 0;clear:both;overflow:auto}.husot-settings-blockedList-item-name{font-size:14px;display:inline-block;width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;height:30px;float:left;line-height:30px;padding-right:80px}.husot-settings-blockedList-item-empty{text-align:center;font-size:16px;color:#bbb;font-style:italic;padding:20px 0}.husot-settings-blockedList-item-unblockBtn{float:right;max-width:80px;overflow:hidden;margin-left:-80px}.husot-settings-footer{text-align:center;width:100%;margin:0 0 5px;padding:20px 0 0;border-top:1px solid #dedede}.husot-settings-footer .husot-button{min-width:70px}.husot-thumbOverlay{display:none;position:absolute;top:auto!important;right:auto!important;bottom:5px!important;left:5px!important;color:#fff;background-color:#000;padding:0 5px;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;line-height:22px;width:auto!important;min-height:auto!important;z-index:9000}.husot-thumbOverlay a{color:#fff!important;text-decoration:none!important}.husot-thumbOverlay a:hover{color:#fff!important;text-decoration:underline!important}.husot-thumbOverlay-menu{list-style:none;padding:0;margin:0}.husot-thumbOverlay-menu li,.husot-thumbOverlay-menu-separator{display:inline}';
     (document.head || document.documentElement).appendChild(style);
 })();
 
