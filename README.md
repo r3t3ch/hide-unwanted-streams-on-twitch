@@ -47,4 +47,5 @@ Failing tests will throw errors into console.
 - 1.0.0 First release. Only Userscript platform is supported.
 
 # Known issues
-- "infinite scroll" can be break, requiring a refresh
+- You can click through blocking overlay menu.
+- "infinite scroll" can break, requiring a refresh
