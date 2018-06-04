@@ -12,8 +12,8 @@
 // @grant        GM.setValue
 // @grant        GM.deleteValue
 // @run-at       document-start
-// @require      https://code.jquery.com/jquery-1.11.2.min.js
-// @require      https://www.promisejs.org/polyfills/promise-6.1.0.min.js
+// @require      https://code.jquery.com/jquery-1.12.4.min.js
+// @require      https://www.promisejs.org/polyfills/promise-7.0.4.min.js
 // ==/UserScript==
 
 // Constants
