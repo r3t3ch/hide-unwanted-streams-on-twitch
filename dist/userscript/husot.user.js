@@ -151,7 +151,7 @@ var husot = husot || {};
 husot.htmlLayout = husot.htmlLayout || {};
 
 husot.htmlLayout.streamOverlay = '\
-    <div class="husot-thumbOverlay">\
+    <div class="husot-thumbOverlay" onclick="return false;">\
         <ul class="husot-thumbOverlay-menu">\
             <li><a class="husot-blockStreamBtn" href="javascript:void(0);">Ban</a></li>\
             <li class="husot-thumbOverlay-menu-separator"> | </li>\
