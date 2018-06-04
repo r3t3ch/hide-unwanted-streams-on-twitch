@@ -2,10 +2,9 @@
 // @name         Hide unwanted streams on Twitch
 // @description  Blocks content that you don't want to see on twitch.tv, such as channels, games, videos etc.
 // @namespace    https://github.com/LinogeFly/hide-unwanted-streams-on-twitch
-// @version      1.3.28
+// @version      1.4
 // @author       LinogeFly
 // @license      MIT
-// @supportURL   https://www.reddit.com/message/compose/?to=LinogeFly
 // @include      http://*.twitch.tv/*
 // @include      https://*.twitch.tv/*
 // @grant        GM.getValue
