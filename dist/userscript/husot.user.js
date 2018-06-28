@@ -15,6 +15,9 @@
 // @require      https://www.promisejs.org/polyfills/promise-7.0.4.min.js
 // ==/UserScript==
 
+// jQuery init (for Greasemonkey)
+this.$ = this.jQuery = jQuery.noConflict(true);
+
 // Constants
 
 var husot = husot || {};
