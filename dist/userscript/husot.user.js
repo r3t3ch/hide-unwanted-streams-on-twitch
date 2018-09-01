@@ -172,7 +172,7 @@ husot.htmlLayout.settingsWindow = '\
         <ul class="husot-settings-blockedList" id="husot-settings-blockedChannelsList"></ul>\
         <ul class="husot-settings-blockedList" id="husot-settings-blockedGamesList"></ul>\
         <div class="husot-settings-footer">\
-            <a href="#" class="husot-modalClose husot-button">Close</a>\
+            <a class="husot-modalClose husot-button" href="javascript:void(0);">Close</a>\
         </div>\
     </div>';
 
@@ -680,7 +680,7 @@ husot.thumbs.StreamThumbsManager.prototype._getChannelName = function ($thumbCon
         },
         // Default (should be the last one)
         {
-            name: function() {
+            name: function () {
                 return $thumbContainer.find('[data-test-selector="preview-card-titles__primary-link"]').attr('href').trimSlash();
             }
         }
@@ -698,7 +698,7 @@ husot.thumbs.StreamThumbsManager.prototype._getChannelNameForUrl = function (map
     var result;
 
     map.forEach(function (item) {
-        if (result) {  // Selector has been found already
+        if (result) { // Selector has been found already
             return;
         };
 
@@ -860,7 +860,7 @@ husot.thumbs.StreamThumbsManager.prototype.hideThumbs = function () {
         var blockedGames = values[1];
 
         // Get visible thumbs
-        $thumbContainers = self._getContainerJQuery().filter(':visible');
+        var $thumbContainers = self._getContainerJQuery().filter(':visible');
 
         // Enumerate visible thumbs and hide those that must be hidden
         var hiddenThumbsCount = 0;
@@ -1087,7 +1087,7 @@ husot.thumbs.GameThumbsManager.prototype.hideThumbs = function () {
     })
     .then(function (blockedGames) { // Hide thumbnails after block list is loaded
         // Get visible thumbs
-        $thumbContainers = self._getContainerJQuery().filter(':visible');
+        var $thumbContainers = self._getContainerJQuery().filter(':visible');
 
         // Enumerate visible thumbs and hide those that must be hidden
         var hiddenThumbsCount = 0;

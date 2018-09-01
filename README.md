@@ -5,12 +5,8 @@ This solution is for blocking unwanted content on [twitch.tv](http://www.twitch.
 # How to use
 See [User Guide](https://github.com/LinogeFly/hide-unwanted-streams-on-twitch/tree/master/docs/user-guide.md) document.
 
-# How to run tests
-Currently, tests are semi-automatic. To run tests open browser's console, select "Hide unwanted streams on Twitch" scope and run the following command:
-```
-husot.tests.runAll()
-```
-Failing tests will throw errors into console.
+# Known issues
+- "infinite scroll" doesn't work on new layout
 
 # Version history
 - 1.3.28 Fixed an issue when channels blocking stopped working.
@@ -45,6 +41,3 @@ Failing tests will throw errors into console.
 - 1.2.0 Added Google Chrome Extension platform.
 - 1.1.0 Added support for hiding videos in addition to live streams.
 - 1.0.0 First release. Only Userscript platform is supported.
-
-# Known issues
-- "infinite scroll" doesn't work on new layout
