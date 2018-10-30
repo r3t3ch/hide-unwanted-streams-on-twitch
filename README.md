@@ -1,12 +1,14 @@
 # About
-This solution is for blocking unwanted content on [twitch.tv](http://www.twitch.tv/), such as streams, games, videos etc. Currently, the following platforms are supported:
-- Userscript, to be used with userscript managers such as [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en) or [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/). Can be installed from [here](https://github.com/r3t3ch/hide-unwanted-streams-on-twitch/raw/master/dist/userscript/husot.user.js).
+This solution is for blocking unwanted content on twitch.tv, such as streams, games, videos etc. Currently, the following platforms are supported:
+- Userscript, to be used with the userscript manager **Tampermonkey** [ [**Chrome**](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en) **|** [**Firefox**](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/) ]. *Greasemonkey* is not supported. Script can be installed from [**here**](https://github.com/r3t3ch/hide-unwanted-streams-on-twitch/raw/master/dist/userscript/husot.user.js).
 
 # How to use
-See [User Guide](https://github.com/LinogeFly/hide-unwanted-streams-on-twitch/tree/master/docs/user-guide.md) document.
+- See [User Guide](https://github.com/LinogeFly/hide-unwanted-streams-on-twitch/tree/master/docs/user-guide.md) document.
+- If "Config mode" is set to "Advanced" in Tampermonkey settings, it will enable a storage tab when editing the script which allows the block list database to be backed up or edited directly.
 
 # Known issues
 - "infinite scroll" doesn't work on new layout
+- Large block lists can cause channels to fail to load (workaround: resize window to reduce column count and refresh)
 
 # Version history
 - 1.3.28 Fixed an issue when channels blocking stopped working.

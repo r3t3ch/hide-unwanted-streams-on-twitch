@@ -10,7 +10,6 @@
 // @include      https://*.twitch.tv/*
 // @grant        GM.getValue
 // @grant        GM.setValue
-// @grant        GM.deleteValue
 // @run-at       document-start
 // @require      https://code.jquery.com/jquery-1.12.4.min.js
 // @require      https://www.promisejs.org/polyfills/promise-7.0.4.min.js
@@ -27,10 +26,7 @@ husot.constants.blockedChannelsListEmpty = 'No Blocked Channels';
 husot.constants.blockedGamesListEmpty = 'No Blocked Games';
 husot.constants.modalDialogShowingSpeed = 150;
 husot.constants.allowedUrls = [
-    '^https?://([a-zA-Z]+\.)?twitch.tv/directory/?$',
-    '^https?://([a-zA-Z]+\.)?twitch.tv/directory/all(/?|/.+)$',
-    '^https?://([a-zA-Z]+\.)?twitch.tv/directory/game/.+',
-    '^https?://([a-zA-Z]+\.)?twitch.tv/communities/[^/]+/?$'
+    '^https?:\/\/([a-zA-Z]+\.)?twitch.tv\/directory.*$'
 ];
 husot.constants.blockedItemType = husot.constants.blockedItemType || {};
 husot.constants.blockedItemType.game = 'game';
@@ -672,7 +668,7 @@ husot.thumbs.StreamThumbsManager.prototype._getChannelName = function ($thumbCon
     var map = [
         {
             urls: [
-                '^https?://([a-zA-Z]+\.)?twitch.tv/directory/all(/?|/.+)$'
+                '^https?:\/\/([a-zA-Z]+\.)?twitch.tv\/directory\/all.*$'
             ],
             name: function () {
                 return $thumbContainer.find('[data-test-selector="preview-card-titles__primary-link"]').attr('href').trimSlash();
