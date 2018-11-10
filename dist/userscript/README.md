@@ -4,8 +4,9 @@ Allows to hide content that you don't want to see on twitch.tv by blocking chann
 # Installation and System Requirements
 This is not a standalone application or web browser extension but a so-called userscript. It is designed to work with userscript manager extension installed in your browser. It has the advantage of being able to backup or edit saved block lists.
 
-The userscript works with the following configurations:
-- Google Chrome 18 or later and Firefox 14 or later with installed extesnion **Tampermonkey** [ [**Chrome**](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en) **|** [**Firefox**](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/) ].
+The userscript works with the following extensions:
+- **Recommended:** Google Chrome 18+ and Firefox 14+ with Tampermonkey [ [**Chrome**](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en) **|** [**Firefox**](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/) ]
+- Firefox 14+ with [Greasemonkey 4+](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey)
 
 **Important:** Userscript manager extension must be installed in your web browser BEFORE installing this userscript.
 

@@ -2,7 +2,7 @@
 // @name         Hide unwanted streams on Twitch
 // @description  Blocks content that you don't want to see on twitch.tv, such as channels, games, videos etc.
 // @namespace    https://github.com/LinogeFly/hide-unwanted-streams-on-twitch
-// @version      1.4
+// @version      1.4.1
 // @author       LinogeFly
 // @license      MIT
 // @icon         data:image/png;base64,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
@@ -37,7 +37,6 @@ husot.constants.blockedItemType.channel = 'channel';
 
 // DOM Listener module
 
-var husot = husot || {};
 husot.domListener = husot.domListener || {};
 
 husot.domListener = (function () {
@@ -99,7 +98,6 @@ husot.domListener = (function () {
 
 // Exceptions
 
-var husot = husot || {};
 husot.exceptions = husot.exceptions || {};
 
 husot.exceptions.abstractFunctionCall = function () {
@@ -146,7 +144,6 @@ if (!String.trimSlash) {
 // HTML Templates
 // TODO: Move into separate files
 
-var husot = husot || {};
 husot.htmlLayout = husot.htmlLayout || {};
 
 husot.htmlLayout.streamOverlay = '\
@@ -187,7 +184,6 @@ husot.htmlLayout.blockedListItemEmpty = '<li><div class="husot-settings-blockedL
 
 // Log manager
 
-var husot = husot || {};
 husot.log = husot.log || {};
 
 husot.log.info = function (obj) {
@@ -208,7 +204,6 @@ husot.log.debug = function (obj) {
 
 // Modal Dialog module
 
-var husot = husot || {};
 husot.modalDialog = husot.modalDialog || {};
 
 husot.modalDialog = (function () {
@@ -253,7 +248,6 @@ husot.modalDialog = (function () {
 
 // Inject javaScript into main window
 
-var husot = husot || {};
 husot.injector = husot.injector || {};
 
 husot.injector.addScripts = function () {
@@ -265,7 +259,6 @@ husot.injector.addScripts = function () {
 
 // Application settings
 
-var husot = husot || {};
 husot.settings = husot.settings || {};
 
 husot.settings.BlockedItems = function (settingsKey) {
@@ -392,7 +385,6 @@ husot.settings.BlockedItems.prototype = {
 
 // Settings UI
 
-var husot = husot || {};
 husot.settings = husot.settings || {};
 husot.settings.ui = husot.settings.ui || {};
 
@@ -517,7 +509,6 @@ husot.settings.ui.activateTab = function (tabId) {
 
 // Video Thumbnails module
 
-var husot = husot || {};
 husot.thumbs = husot.thumbs || {};
 
 // abstract class ThumbsManagerBase
@@ -637,11 +628,11 @@ husot.thumbs.StreamThumbsManager.prototype.getDomListnerThumbSelector = function
 }
 
 husot.thumbs.StreamThumbsManager.prototype._getContainerJQuery = function () {
-    return $('[data-target="directory-game__card_container"]').parent();
+    return $('.tw-tower > [style^="order: "]');
 }
 
 husot.thumbs.StreamThumbsManager.prototype._getThumbJQuery = function () {
-    return $('[data-target="directory-game__card_container"]').find('figure:first');
+    return $('.tw-tower > [style^="order: "]').find('figure:first');
 }
 
 husot.thumbs.StreamThumbsManager.prototype._getGameName = function ($thumbContainer) {
@@ -1125,13 +1116,12 @@ husot.thumbs.GameThumbsManager.prototype.showThumbs = function (name) {
     }
 
     var style = document.createElement('style');
-    style.textContent = '.husot-button{background:#6441a5;color:#fff!important;padding:0 10px;font-size:12px;text-align:center;cursor:pointer;height:30px;display:inline-block;line-height:30px}.husot-button:hover{color:#fff;background:#7550ba;text-decoration:none}.husot-modalOverlay{display:none;background:rgba(13,13,13,0.85);position:fixed;z-index:10000;top:0;bottom:0;left:0;padding:20px 0;width:100%;overflow-x:hidden;overflow-y:auto}.husot-modalWindow{display:none;position:relative;opacity:1;margin:50px auto 0}.husot-settings{font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#bbb;width:360px;background:#151515;padding:20px}.husot-settings-nav{list-style:none;padding:0;margin:0 0 5px;border-bottom:1px solid rgba(255,255,255,.2);overflow:auto}.husot-settings-nav-item{float:left;margin-right:20px}.husot-settings-nav-item-name{font-size:14px;line-height:24px;padding-bottom:7px;display:inline-block;cursor:pointer;text-decoration:none;color:#6441a5;border-bottom:1px solid transparent}.husot-settings-nav-item-name:hover{color:#19191f;border-bottom:1px solid rgba(255,255,255,.35);text-decoration:none}.husot-settings-nav-item-name-active,.husot-settings-nav-item-name-active:hover{color:#19191f;border-bottom:1px solid rgba(255,255,255,.5)}.husot-settings-blockedList{list-style:none;padding:0;margin:0 0 5px;overflow-y:auto;min-height:240px;max-height:400px}.husot-settings-blockedList-item{margin:5px 0;clear:both;overflow:auto}.husot-settings-blockedList-item-name{font-size:14px;display:inline-block;width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;height:30px;float:left;line-height:30px;padding-right:80px}.husot-settings-blockedList-item-empty{text-align:center;font-size:16px;color:#bbb;font-style:italic;padding:20px 0}.husot-settings-blockedList-item-unblockBtn{float:right;max-width:80px;overflow:hidden;margin-left:-80px}.husot-settings-footer{text-align:center;width:100%;margin:0 0 5px;padding:20px 0 0;border-top:1px solid #202020}.husot-settings-footer .husot-button{min-width:70px}.husot-thumbOverlay{display:none;position:absolute;top:auto!important;right:5px!important;bottom:5px!important;left:auto!important;color:#fff;background-color:#000;padding:0 5px;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;line-height:22px;width:auto!important;min-height:auto!important;border-radius:2px!important;box-shadow:0 0 0 1px #fff;z-index:9000}.husot-thumbOverlay a{color:#fff!important;text-decoration:none!important}.husot-thumbOverlay a:hover{color:#fff!important;text-decoration:underline!important}.husot-thumbOverlay-menu{list-style:none;padding:0;margin:0}.husot-thumbOverlay-menu li,.husot-thumbOverlay-menu-separator{display:inline}';
+    style.textContent = '.husot-button{background:#6441a5;color:#fff!important;padding:0 10px;font-size:12px;text-align:center;cursor:pointer;height:30px;display:inline-block;line-height:30px}.husot-button:hover{color:#fff;background:#7550ba;text-decoration:none}.husot-modalOverlay{display:none;background:rgba(13,13,13,0.85);position:fixed;z-index:10000;top:0;bottom:0;left:0;padding:20px 0;width:100%;overflow-x:hidden;overflow-y:auto}.husot-modalWindow{display:none;position:relative;opacity:1;margin:50px auto 0}.husot-settings{font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#bbb;width:360px;background:#151515;padding:20px}.husot-settings-nav{list-style:none;padding:0;margin:0 0 5px;border-bottom:1px solid rgba(255,255,255,.2);overflow:auto}.husot-settings-nav-item{float:left;margin-right:20px}.husot-settings-nav-item-name{font-size:14px;line-height:24px;padding-bottom:7px;display:inline-block;cursor:pointer;text-decoration:none;color:#b19dd8!important;border-bottom:1px solid transparent}.husot-settings-nav-item-name:hover{color:#fff!important;border-bottom:1px solid rgba(255,255,255,.35);text-decoration:none}.husot-settings-nav-item-name-active,.husot-settings-nav-item-name-active:hover{color:#fff!important;border-bottom:1px solid rgba(255,255,255,.5)}.husot-settings-blockedList{list-style:none;padding:0;margin:0 0 5px;overflow-y:auto;min-height:240px;max-height:400px}.husot-settings-blockedList-item{margin:5px 0;clear:both;overflow:auto}.husot-settings-blockedList-item-name{font-size:14px;display:inline-block;width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;height:30px;float:left;line-height:30px;padding-right:80px}.husot-settings-blockedList-item-empty{text-align:center;font-size:16px;color:#bbb;font-style:italic;padding:20px 0}.husot-settings-blockedList-item-unblockBtn{float:right;max-width:80px;overflow:hidden;margin-left:-80px}.husot-settings-footer{text-align:center;width:100%;margin:0 0 5px;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.2)}.husot-settings-footer .husot-button{min-width:70px}.husot-thumbOverlay{display:none;position:absolute;top:auto!important;right:5px!important;bottom:5px!important;left:auto!important;color:#fff;background-color:#000;padding:0 5px;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;line-height:22px;width:auto!important;min-height:auto!important;border-radius:2px!important;box-shadow:0 0 0 1px #fff;z-index:9000}.husot-thumbOverlay a{color:#fff!important;text-decoration:none!important}.husot-thumbOverlay a:hover{color:#fff!important;text-decoration:underline!important}.husot-thumbOverlay-menu{list-style:none;padding:0;margin:0}.husot-thumbOverlay-menu li,.husot-thumbOverlay-menu-separator{display:inline}.husot-settings-blockedList-item{padding-right:5px}::-webkit-scrollbar{background-color:rgba(255,255,255,.2);width:12px}::-webkit-scrollbar-thumb{background:#999}::-webkit-scrollbar-thumb:hover{background: #777}::-webkit-scrollbar-thumb:active{background:#555}';
     (document.head || document.documentElement).appendChild(style);
 })();
 
 // Application settings (Userscript specific)
 
-var husot = husot || {};
 husot.settings = husot.settings || {};
 
 husot.settings.setValue = function (key, value, callback) {
@@ -1155,8 +1145,6 @@ husot.settings.getValue = function (key, defaultValue, callback) {
 };
 
 // Application start
-
-var husot = husot || {};
 
 husot.main = function () {
     // Run only in top frame
