@@ -2,7 +2,7 @@
 // @name         Hide unwanted streams on Twitch
 // @description  Blocks content that you don't want to see on twitch.tv, such as channels, games, videos etc.
 // @namespace    https://github.com/LinogeFly/hide-unwanted-streams-on-twitch
-// @version      1.4.2
+// @version      1.4.3
 // @author       LinogeFly
 // @license      MIT
 // @icon         data:image/png;base64,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
@@ -970,7 +970,7 @@ husot.thumbs.GameThumbsManager.prototype._getGameName = function($thumbContainer
         throw Error(husot.exceptions.argumentNullOrEmpty('$thumbContainer'));
     }
 
-    var $game = $thumbContainer.find('.tw-card-body .tw-box-art-card__title');
+    var $game = $thumbContainer.find('div[data-a-target="tw-card-title"]');
 
     if (!$game.length) {
         throw Error(husot.exceptions.elementNotFound('Game name'));
